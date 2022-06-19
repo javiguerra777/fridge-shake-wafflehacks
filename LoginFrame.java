@@ -58,6 +58,13 @@ class LoginFrame extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
     }
 
+    public void displayLoginFrame(LoginFrame loginframe){
+        loginframe.setTitle("Login Form");
+        loginframe.setVisible(true);
+        loginframe.setBounds(10, 10, 370, 600);
+        loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginframe.setResizable(false);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -65,7 +72,6 @@ class LoginFrame extends JFrame implements ActionListener {
         if (e.getSource() == loginButton) {
             
             String userText;
-            String nameText;
             String pwdText;
             userText = userTextField.getText();
             pwdText = passwordField.getText();
@@ -78,8 +84,8 @@ class LoginFrame extends JFrame implements ActionListener {
         }
         //Coding Part of RESET button
         if (e.getSource() == resetButton) {
-            userTextField.setText("");
-            passwordField.setText("");
+            RegistrationFrame registration = new RegistrationFrame();
+            registration.displayRegistrationPage(registration);
         }
        //Coding Part of showPassword JCheckBox
         if (e.getSource() == showPassword) {
@@ -95,14 +101,17 @@ class LoginFrame extends JFrame implements ActionListener {
 
 }
 
+
+
 class Login {
     public static void main(String[] a) {
-        LoginFrame frame = new LoginFrame();
-        frame.setTitle("Login Form");
-        frame.setVisible(true);
-        frame.setBounds(10, 10, 370, 600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        LoginFrame loginframe = new LoginFrame();
+        loginframe.setTitle("Login Form");
+        loginframe.setVisible(true);
+        loginframe.setBounds(10, 10, 370, 600);
+        loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginframe.setResizable(false);
+        
 
     }
 

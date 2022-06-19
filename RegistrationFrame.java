@@ -65,6 +65,13 @@ class RegistrationFrame extends JFrame implements ActionListener {
         showPassword.addActionListener(this);
     }
 
+    public void displayRegistrationPage(RegistrationFrame frame){
+        frame.setTitle("Registration Form");
+        frame.setVisible(true);
+        frame.setBounds(10, 10, 370, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -104,11 +111,7 @@ class RegistrationFrame extends JFrame implements ActionListener {
 class Registration {
     public static void main(String[] args) {
         RegistrationFrame frame = new RegistrationFrame();
-        frame.setTitle("Registration Form");
-        frame.setVisible(true);
-        frame.setBounds(10, 10, 370, 600);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        
 
     }
 
