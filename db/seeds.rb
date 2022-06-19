@@ -10,3 +10,20 @@ user = User.create({
   name: "Javi",
   email: "test@gmail.com"
 })
+
+friend = Friend.create({
+  name: "Javi's Friend",
+  email: "iamafriend@gmail.com"
+})
+
+chat = Chat.create({
+  chatroomID: 1,
+  senderID: 2,
+  recipientID: 3,
+  message: "I hate tiktok"
+})
+
+video = Video.create({
+  hostID: 1,
+  guestID: 2
+})

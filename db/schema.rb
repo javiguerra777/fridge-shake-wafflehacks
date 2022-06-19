@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_18_174539) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_19_011421) do
+  create_table "chats", force: :cascade do |t|
+    t.integer "chatroomID"
+    t.integer "senderID"
+    t.integer "recipientID"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password"
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.integer "hostID"
+    t.integer "guestID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
