@@ -27,7 +27,7 @@ class recipiesFrame extends JFrame implements ActionListener {
     JButton followButton = new JButton("Follow");
     //JCheckBox showPassword = new JCheckBox("Show Password");
 
-    profileFrame() {
+    void profileFrame() {
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
