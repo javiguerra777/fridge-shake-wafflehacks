@@ -8,7 +8,7 @@ import java.awt.Image;
 class profileFrame extends JFrame implements ActionListener {
     ///label.setFont(this.font);
     Container container = getContentPane();
-    JLabel profileHead = new JLabel("Profile");
+    JLabel profileHead = new JLabel("<html><font size ='5' color =orange> My Saved Favorite Expert </font></html>");
     //JLabel profilePic = new JLabel( new ImageIcon ("chef"));
     ImageIcon imageIcon = new ImageIcon("chef.jpeg");
     Image image = imageIcon.getImage();
@@ -37,19 +37,21 @@ class profileFrame extends JFrame implements ActionListener {
     }
 
     public void setLocationAndSize() {
-        profilePic.setBounds(115, 80, 100,150 );
-        nameLabel.setBounds(100, 240, 150, 30);
-        hashTagLabel.setBounds(100, 280, 150, 30);
-        followButton.setBounds(100, 320, 150, 30);
-        messageButton.setBounds(100, 360, 150, 30);
-        sessionButton.setBounds(100, 400, 150, 30);
-        commentLabel.setBounds(100, 440, 150,30);
-        commentField.setBounds(100,440, 150, 30);
+        profileHead.setBounds(80, 10, 300,150 );
+        profilePic.setBounds(115, 100, 100,150 );
+        nameLabel.setBounds(100, 260, 150, 30);
+        hashTagLabel.setBounds(100, 300, 150, 30);
+        followButton.setBounds(100, 340, 150, 30);
+        messageButton.setBounds(100, 380, 150, 30);
+        sessionButton.setBounds(100, 420, 150, 30);
+        commentLabel.setBounds(100, 460, 150,30);
+        commentField.setBounds(100,460, 150, 30);
         //showPassword.setBounds(200, 1500, 120, 30);
         
     }
 
     public void addComponentsToContainer() {
+        container.add(profileHead);
         container.add(profilePic);
         container.add(nameLabel);
         container.add(hashTagLabel);

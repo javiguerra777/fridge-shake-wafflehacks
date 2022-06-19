@@ -17,68 +17,24 @@ import javax.swing.WindowConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-class Imageslider extends JFrame implements ActionListener
-{
-  ImageIcon s[]; 
-  JLabel l;
-  JButton b1,b2; 
-  int i, l1; 
-  JPanel p;
+//class Imageslider extends JFrame implements ActionListener
 
-  public Imageslider()
-  {
-    setLayout(new BorderLayout());
-    setSize(100,100);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setVisible(true);
 
-    JPanel p = new JPanel(new FlowLayout()); 
-    b1 = new JButton("<<");
-    b2 = new JButton(">>");
-    p.add(b1);
-    p.add(b2);
-    add(p,BorderLayout.SOUTH); 
-    b1.addActionListener(this); 
-    b2.addActionListener(this); 
-    s= new ImageIcon[2]; 
-    s[0] = new ImageIcon("strawberryCake.jpg"); 
-    s[1] = new ImageIcon("strawberryWaffle.jpg"); 
-    l = new JLabel("", JLabel.CENTER); 
-    add(l,BorderLayout.CENTER); 
-    l.setIcon(s[0]);
-  }
 
-  public void actionPerformed(ActionEvent e)
-  {
-      if(e.getSource()==b1)
-      {
-          if(i==0)
-          {
-              JOptionPane.showMessageDialog(null,"This is First Image");
-          }
-          else
-              {
-              i=i-1;
-              l.setIcon(s[i]);
-          }
-      }
-      if(e.getSource()==b2)
-      {
-          if(i==s.length-1)
-          {
-              JOptionPane.showMessageDialog(null,"This is LastImage");
-          }
-          else
-              {
-              i=i+1;
-              l.setIcon(s[i]);
-              }
-          }
-       }
+public class mainScreen extends JFrame implements ActionListener {
+    public void addActionEvent(JButton button) {
+        button.addActionListener(this);
     }
 
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //Coding Part of LOGIN button
+        if (e.getSource() == button) {
+            
 
-public class mainScreen {
+        }
+    }
   public static void main (String[] args) {
    // PanelModel panel = new PanelModel();
     //Creating the frame
@@ -96,10 +52,12 @@ public class mainScreen {
     JMenuItem m11 = new JMenuItem("Shake Fridge");
     JMenuItem m12 = new JMenuItem("View Recipes");
     JMenuItem m13 = new JMenuItem("Cooking Hacks");
+    JMenuItem m14 = new JMenuItem("Login");
     
     m1.add(m11);
     m1.add(m12);
     m1.add(m13);
+    m1.add(m14);
 
     JPanel panel = new JPanel(); // the panel is not visible in output
     JLabel label = new JLabel("Enter Text");

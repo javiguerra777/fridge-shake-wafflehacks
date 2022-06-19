@@ -2,14 +2,9 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-import java.awt.Color;
-import java.awt.GridBagLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.WindowConstants;
-import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
 
 class Imageslider extends JFrame implements ActionListener
 {
@@ -18,25 +13,55 @@ class Imageslider extends JFrame implements ActionListener
   JButton b1,b2; 
   int i, l1; 
   JPanel p;
+  JTextField ingredient;
+  JTextField time;
+
+  public void displayShakeFrame(Imageslider slide){
+    slide.setTitle("Display ShakeFrame");
+    slide.setVisible(true);
+    slide.setBounds(10, 10, 370, 600);
+    slide.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    slide.setResizable(false);
+}
 
   public Imageslider()
   {
     setLayout(new BorderLayout());
-    setSize(300,300);
+    setSize(400,600);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
 
+    JLabel Imageslider = new JLabel("<html><font size ='4' color =orange> Shake your Fridge /n after setting time and ingredients!  </font></html>");
+
+    add(Imageslider,BorderLayout.NORTH); 
     JPanel p = new JPanel(new FlowLayout()); 
     b1 = new JButton("<<");
+    ingredient  = new JTextField("type ingredients to shake");
+    time  = new JTextField("type max time to cook");
     b2 = new JButton(">>");
     p.add(b1);
+    p.add(ingredient);
+    p.add(time);
     p.add(b2);
     add(p,BorderLayout.SOUTH); 
     b1.addActionListener(this); 
     b2.addActionListener(this); 
-    s= new ImageIcon[2]; 
-    s[0] = new ImageIcon("strawberryCake.jpg"); 
-    s[1] = new ImageIcon("strawberryWaffle.jpg"); 
+    s= new ImageIcon[3]; 
+
+    ImageIcon imageIcon = new ImageIcon("applePieBread.jpg");
+    Image image = imageIcon.getImage();
+    Image newimg = image.getScaledInstance(200,200,java.awt.Image.SCALE_SMOOTH);
+    ImageIcon foodIcon= new ImageIcon(newimg);
+
+    ImageIcon imageIcon2 = new ImageIcon("cinammonEggyBread.jpg");
+    ImageIcon imageIcon3 = new ImageIcon("CurriedEggSalad.jpg");
+    //Image image3 = imageIcon3.getImage();
+    //Image newimg3 = image3.getScaledInstance(200,200,java.awt.Image.SCALE_SMOOTH);
+    //ImageIcon foodIcon3= new ImageIcon(newimg3);
+
+    s[0] = foodIcon; 
+    s[1] = imageIcon2;
+    s[2] = imageIcon3; 
     l = new JLabel("", JLabel.CENTER); 
     add(l,BorderLayout.CENTER); 
     l.setIcon(s[0]);
@@ -68,47 +93,19 @@ class Imageslider extends JFrame implements ActionListener
               l.setIcon(s[i]);
               }
           }
+
        }
     public static void main(String args[]){
 
         Imageslider img2 = new Imageslider();
-/* 
-        JFrame f = new JFrame();
-        f.setTitle("Example2");
-        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        slide.setTitle("Display ShakeFrame");
+        slide.setVisible(true);
+        slide.setBounds(10, 10, 370, 600);
+        slide.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        slide.setResizable(false);
+    }
 
-        JPanel p1 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        p1.add(new JButton("Menu Button"));
-        
-        //JPanel p2 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        //Imageslider img1 = new Imageslider();
-        //p2.add(img1);
-
-        //JPanel p3 = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        //Imageslider img2 = new Imageslider();
-        //p3.add(img2);
-
-        JPanel p3 = new JPanel(new Imageslider());
-        JPanel p3 = new JPanel(new Imageslider());
+    }
 
 
-        JPanel global = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-
-        gbc.weighty = 1.0f; // added
-        gbc.gridy = 0;
-        global.add(p1, gbc);
-        gbc.gridy++;
-        global.add(p2, gbc);
-        gbc.gridy++;
-        global.add(p3, gbc);
     
-        f.add(global);
-        f.pack();
-        f.setVisible(true);
-        */
-
-    }
-
-    }

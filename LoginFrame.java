@@ -98,6 +98,7 @@ class LoginFrame extends JFrame implements ActionListener {
       showPassword.addActionListener(this);
     }
 
+<<<<<<< HEAD
     @Override
     public void actionPerformed(ActionEvent e) {
       //Coding Part of LOGIN button
@@ -125,13 +126,68 @@ class LoginFrame extends JFrame implements ActionListener {
           passwordField.setEchoChar((char) 0);
         } else {
           passwordField.setEchoChar('*');
+=======
+    public void displayLoginFrame(LoginFrame loginframe){
+        loginframe.setTitle("Login Form");
+        loginframe.setVisible(true);
+        loginframe.setBounds(10, 10, 370, 600);
+        loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginframe.setResizable(false);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        //Coding Part of LOGIN button
+        if (e.getSource() == loginButton) {
+            
+            String userText;
+            String pwdText;
+            userText = userTextField.getText();
+            pwdText = passwordField.getText();
+            if (userText.equalsIgnoreCase("mehtab") && pwdText.equalsIgnoreCase("12345")) {
+                JOptionPane.showMessageDialog(this, "Login Successful");
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+            }
+
+        }
+        //Coding Part of RESET button
+        if (e.getSource() == resetButton) {
+            RegistrationFrame registration = new RegistrationFrame();
+            registration.displayRegistrationPage(registration);
+        }
+       //Coding Part of showPassword JCheckBox
+        if (e.getSource() == showPassword) {
+            if (showPassword.isSelected()) {
+                passwordField.setEchoChar((char) 0);
+            } else {
+                passwordField.setEchoChar('*');
+            }
+
+
+>>>>>>> 341100fe9162ce927264efe055ffd8d61cc95ef3
         }
       }
       
     }
 }
 
+
+
 class Login {
+<<<<<<< HEAD
+=======
+    public static void main(String[] a) {
+        LoginFrame loginframe = new LoginFrame();
+        loginframe.setTitle("Login Form");
+        loginframe.setVisible(true);
+        loginframe.setBounds(10, 10, 370, 600);
+        loginframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        loginframe.setResizable(false);
+        
+
+    }
+>>>>>>> 341100fe9162ce927264efe055ffd8d61cc95ef3
 
   public static void main(String[] a) {
     LoginFrame frame = new LoginFrame();
